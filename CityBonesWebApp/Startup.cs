@@ -1,11 +1,15 @@
+using CityBonesWebApp.Models;
+using CityBonesWebApp.Models.Checkout;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,16 +17,21 @@ namespace CityBonesWebApp
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
-
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IDbConnection>((s) =>
+            {
+                IDbConnection conn = new MySqlConnection(Configuration.GetConnectionString("citybones"));
+                conn.Open();
+                return conn;
+            });
+
+            services.AddTransient<IProductRepo, ProductRepo>();
+            services.AddTransient<ICategoryRepo, CategoryRepo>();
+            services.AddTransient<IAdminInventoryRepo, AdminInventoryRepo>();
             services.AddControllersWithViews();
         }
 

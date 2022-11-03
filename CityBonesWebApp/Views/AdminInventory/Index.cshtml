@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Product>
+<h3> Product Information </h3>
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>ProductID</th>
+        <th>Price</th>
+        <th>StockLevel</th>
+        <th>OnSale</th>
+    </tr>
+    @foreach (var product in Model)
+     {
+
+    <tr>
+        <td>@product.ProductID</td>
+        <td>@product.Name</td>
+        <td>@product.Price</td>
+        <td>@product.StockLevel</td>
+        <td>@product.OnSale</td>
+        <td><a href="/AdminInventory/UpdateProduct/@product.ProductID">Update this product</a></td>
+        <td>
+            @using (Html.BeginForm("DeleteProduct", "Product", "Post"))
+            {
+                <input type="hidden" asp-for="@product.ProductID" value="@product.ProductID" />
+                <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this product" />
+
+            }
+        </td>
+    </tr>
+     }
+
+</table>

@@ -1,8 +1,93 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" type="text/css" href="maincss" />
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <div style="display:inline-block;vertical-align:top;">
+        <p><image class='picture'>
+            <p style="text-align:center" ;> 
+                <img src="/images/cityboneslogo.jpeg"
+                alt="city bones logo" 
+                width="300" 
+                height="300" />
+            </p>
+    </div>
+    <div style="display:inline-block;"></div>
 </div>
+
+
+
+<h5 class="text-center" style="font-family: cursive">
+
+    My shop, City Bones,
+    <br />
+    is a combination of art, macrame, and jewelry
+    <br />with ethically sourced animal bones incorporated.
+</h5>
+<br />
+<br>
+<div class="contactMe">
+    <h2 style="font-size: medium">Contact Me</h2>
+
+    <div>
+
+        <a href="mailto:citybones3@gmail.com">
+            <img src="/images/cbemail.png"
+                 alt="email address"
+                 height="35"
+                 width="35">
+        </a>
+
+
+
+        <a href="https://www.facebook.com/profile.php?id=100022769647644">
+            <img src="/images/cbfb.png"
+                 alt="facebook"
+                 height="35"
+                 width="35">
+        </a>
+
+        <a href="https://www.instagram.com/city_bones/?hl=en">
+            <img src="/images/cbinsta.png"
+                 alt="instagram"
+                 height="35"
+                 width="35">
+        </a>
+
+    </div>
+</div>
+
+<style>
+    body {
+        background-image: url(images/cbhomepage.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+
+    img {
+        border-radius: 50%;
+    }
+
+
+
+    .contactMe {
+        /* scroll-margin-bottom: 20px;
+        position: center;
+        text-align: center;
+        bottom: 0px;
+        width: 100%;*/
+        /*position: fixed;
+        text-align: center;
+        bottom: 0px;
+        width: 100%;*/
+        padding-top: 10%;
+        position: center;
+        text-align: center;
+        bottom: 0px;
+        width: 100%;
+    }
+</style>
