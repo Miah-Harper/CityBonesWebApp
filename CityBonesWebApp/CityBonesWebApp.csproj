@@ -5,8 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\AdminInventory\Index.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Dapper" Version="2.0.123" />
     <PackageReference Include="MySql.Data" Version="8.0.31" />
+    <PackageReference Include="xunit.extensibility.core" Version="2.4.2" />
   </ItemGroup>
 
 </Project>

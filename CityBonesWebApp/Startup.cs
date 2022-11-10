@@ -52,7 +52,7 @@ namespace CityBonesWebApp
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            //app.UseAuthentication(); //new
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
