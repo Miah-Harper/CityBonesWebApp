@@ -67,6 +67,11 @@ namespace CityBonesWebApp.Controllers
         {
             return View();
         }
+
+        public IActionResult ContactMe()
+        {
+            return View();
+        }
     }
 }
 

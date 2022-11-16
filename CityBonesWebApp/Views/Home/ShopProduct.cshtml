@@ -14,17 +14,17 @@
 
         <div class="column">
 
-            <a href="/Home/Images/FloralBobCat.html"> <img src="https://tinypic.host/images/2022/07/14/IMG_7715.jpg" alt="Floral Bobcat Skull" style="width:25%"></a>
+           @* <a href="/Home/Images/FloralBobCat.html"> <img src="/images/fl" alt="Floral Bobcat Skull" style="width:25%"></a>
             <p style="font-size:medium">Floral Bobcat Skull</p>
             <p class="price">$120</p>
-            <p><button>Add To Cart</button></p>
+            <p><button>Add To Cart</button></p>*@
 
-            <img src="https://tinypic.host/images/2022/07/14/IMG_7706.jpg" alt="Raccoon Angel" style="width:25%">
+            <img src="/images/RaccoonAngel.jpg" alt="Raccoon Angel" style="width:25%">
             <p style="font-size:medium">Raccoon Angel</p>
             <p class="price">$175</p>
             <p><button>Add To Cart</button></p>
 
-            <img src="https://tinypic.host/images/2022/07/14/IMG_7697.jpg" alt="Pig Skull Macrame" style="width:25%">
+            <img src="/images/MacramePigSkull.jpg" alt="Pig Skull Macrame" style="width:25%">
             <p style="font-size:medium">Macrame Pig Skulll</p>
             <p class="price">$195</p>
             <p><button>Add To Cart</button></p>
@@ -33,17 +33,17 @@
 
 
     <div class="column">
-        <img src="https://tinypic.host/images/2022/07/14/IMG_7651.jpg" alt="Queen Mama" style="width:25%">
+        <img src="/images/QueenMamaDeerSkull.jpg" alt="Queen Mama" style="width:25%">
         <p style="font-size:medium">Queen Mama Deer Skull</p>
         <p class="price">$195</p>
         <p><button>Add To Cart</button></p>
 
-        <img src="https://tinypic.host/images/2022/07/14/IMG_7723.jpg" alt="Crystallized Opposum Skull" style="width:25%">
+        <img src="/images/CrystallizedOpposumSkull.jpg" alt="Crystallized Opposum Skull" style="width:25%">
         <p style="font-size:medium">Crystallized Opposum Skull</p>
         <p class="price">$120</p>
         <p><button>Add To Cart</button></p>
 
-        <img src="https://tinypic.host/images/2022/07/14/IMG_7729.jpg" alt="She Fancy Coyote Skull" style="width:20%">
+        <img src="/images/SheFancyCoyoteSkull.jpg" alt="She Fancy Coyote Skull" style="width:20%">
         <p style="font-size:medium">She Fancy Coyote Skull</p>
         <p class="price">$170</p>
         <p><button>Add To Cart</button></p>
@@ -53,18 +53,18 @@
 
     <div class="column">
 
-        <img src="https://tinypic.host/images/2022/07/14/IMG_7735.jpg" alt="Metallic Gold Deer Skull" style="width:25%">
+        <img src="/images/MetallicGoldDeerSkull.jpg" alt="Metallic Gold Deer Skull" style="width:25%">
         <p style="font-size:medium">Metallic Gold Deer Skulll</p>
         <p class="price">$140</p>
         <p><button>Add To Cart</button></p>
 
 
-        <img src="https://tinypic.host/images/2022/07/14/IMG_7753.jpg" alt="Mossy Coyote Skull" style="width:25%">
+        <img src="/images/MossyCoyoteSkull.jpg" alt="Mossy Coyote Skull" style="width:25%">
         <p style="font-size:medium">Mossy Coyote Skull</p>
         <p class="price">$75</p>
         <p><button>Add To Cart</button></p>
 
-        <img src="https://tinypic.host/images/2022/07/14/deervertebrae.jpg" alt="Horse Vertebra" style="width:25%">
+        <img src="/images/HorseVertebrae.jpg" alt="Horse Vertebra" style="width:25%">
         <p style="font-size:medium">Horse Vertebrae</p>
         <p class="price">$55</p>
         <p><button>Add To Cart</button></p>
@@ -72,20 +72,20 @@
 
     <div class="column">
 
-        <img src="https://tinypic.host/images/2022/07/14/IMG_7762.jpg" alt="Horse Vertebrae Yellow" style="width:25%">
+        <img src="/images/HorseVertabraeyellow.jpg" alt="Horse Vertebrae Yellow" style="width:25%">
         <p style="font-size:medium">Horse Vertebrae</p>
         <p class="price">$50</p>
         <p><button>Add To Cart</button></p>
 
-        <img src="https://tinypic.host/images/2022/07/14/IMG_7766.jpg" alt="Horse Vertebrae Green" style="width:25%">
+        <img src="/images/horsevertabraegreen.jpg" alt="Horse Vertebrae Green" style="width:25%">
         <p style="font-size:medium">Horse Vertebrae</p>
         <p class="price">$50</p>
         <p><button>Add To Cart</button></p>
 
-        <img src="https://tinypic.host/images/2022/07/15/IMG_7769.jpg" alt="Horse Vertebrae Purple" style="width:25%">
+        @*<img src="/images/hors" alt="Horse Vertebrae Purple" style="width:25%">
         <p style="font-size:medium">Horse Vertebrae</p>
         <p class="price">$50</p>
-        <p><button>Add To Cart</button></p>
+        <p><button>Add To Cart</button></p>*@
 
     </div> 
 
@@ -95,18 +95,21 @@
 
     <style>
 
-        .row {
-            display: flex;
-            flex-wrap: wrap;
-            padding: 0 10px;
-            text-align: center;
-        }
+   
+             
+
+        
 
         /* Create two equal columns that sits next to each other */
         .column {
             flex: 35%;
             padding: 0 30px;
             text-align: center;
+            float: left;
+            width: 100%;
+            padding: 10px;
+
+
         }
 
             .column img {
@@ -116,10 +119,11 @@
                 text-align: center;
             }
 
+            
         body {
-            background-image: url('https://tinypic.host/images/2022/07/14/bacgroundshopproduct-2.jpg');
+            background-image: url('/images/cloudsproducts.png');
             background-repeat: no-repeat;
-            background-size: cover;
+            background-size:cover;
         }
 
         .card {
