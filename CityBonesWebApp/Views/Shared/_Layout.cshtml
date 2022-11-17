@@ -56,8 +56,8 @@
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div class="container containerflex">
+        <main role="main" class="pb-3 mainflex">
             @RenderBody()
         </main>
     </div>
@@ -67,35 +67,8 @@
 
 <!--Section 7: Footer-->
 
-@*<div class="footer">
-      @*<p class="footer-text-left">
-    <a href="index.html" class="menu">home</a>
-    <a href="https://css.sammy-codes.com/about.html" class="menu">about</a> 
-    <a href="https://css.sammy-codes.com/credits.html" class="menu">credits</a>*@
-  @*  <div class="footer-content-right">
-  <a href="mailto:citybones3@gmail.com"><img src="/images/cbemail.png" class="icon-style" alt="Email icon"></a>
-  <a href="https://www.facebook.com/profile.php?id=100022769647644"><img src="/images/cbfb.png" class="icon-style" alt="Facebook icon"></a>
-  <a href="https://www.instagram.com/city_bones/?hl=en"><img src="/images/cbinsta.png" class="icon-style" alt="Instagram Icon"></a>
-</div>
- @* </p>*@
 
 
-
-<@*footer class="bg-white">
-    <div class="container py-5">
-      <div class="row py-4">
-        <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">@*<img src="img/logo.png" alt="" width="180" class="mb-3">*@
-      @*    <p class="font-italic text-muted">Contact Me!</p>
-          <ul class="list-inline mt-4">
-            <li class="list-inline-item"><a href="mailto:citybones3@gmail.com" target="_blank" title="twitter"><i class="E-mail"><img src="/images/cbemail.png" class="icon-style" alt="Email icon" width="25" height="25"></i></a></li>
-            <li class="list-inline-item"><a href="https://www.facebook.com/profile.php?id=100022769647644" target="_blank" title="Facebook"><i class="facebook"><img src="/images/cbfb.png" class="icon-style" alt="Facebook icon" width="25" height="25"></i></a></li>
-            <li class="list-inline-item"><a href="https://www.instagram.com/city_bones/?hl=en" target="_blank" title="Instagram"><i class="instagram"></i><img src="/images/cbinsta.png" class="icon-style" alt="Instagram Icon" width="25" height="25"></a></li>
-           
-          </ul>
-        </div>
-        </div>
-        </div>
-        </footer>*@
   
  
 
@@ -116,15 +89,7 @@ body {margin:0;}
   width: 100%;
 }
 
-/*.navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}*/
+
 
 .navbar a:hover {
   background: #ddd;
@@ -137,88 +102,16 @@ body {margin:0;}
   height: 1500px; /* Used in this example to enable scrolling */
 }
 
-/*.nav2 {
-  list-style-type: none;
-  overflow: hidden;
-  position: absolute;
-  display: table;
-  text-align: center;
-  margin-top: -22px;
-  padding: 0;
+.mainflex{
+    display: flex;
+    flex-direction: column;
 }
 
-.li2 {
-  display: inline-block;
-  padding: 0;
-  font-family: proxima nova;
-  font-size: 10px;
-  text-decoration: none;
-}
-*/
-
-
-/* Footer */
-
-/*.footer {
-  position:fixed;
-  bottom:0px;
-  left:0px;
-  width:100%;
-  height: 80px;
-  background-color:azure;
+.containerflex{
+    display: flex;
+    flex-direction: column;
 }
 
-
-
-
-.footer-text-left {
-  font-size:25px;
-  padding-left:40px;
-  float:left;
-  word-spacing:20px;
-}*/
-
-/*a.menu:hover {
-  background-color:dimgrey;
-  font-size:20px;
-}
-
-.footer-content-right {
-  padding-right:40px;
-  margin-top:50px;
-  text-align: center;
-}
-
-.icon-style {
-  height:40px;
-  margin-left:20px;
-  margin-top:5px;
-  border-radius: 0;
-}
-
-.icon-style:hover {
-  background-color:dimgrey;
-  padding:5px;
-}*/
-
-
-/*#button-addon1 {
-  color: #ffc371;
-}
-
-i {
-  color: #ffc371;
-}
-
-.form-control::placeholder {
-  font-size: 0.95rem;
-  color: #aaa;
-  font-style: italic;
-}
-
-.form-control.shadow-0:focus {
-  box-shadow: none;
-}
     </style>
 
  
@@ -226,5 +119,5 @@ i {
 
 </html>
 
-*/
+
 

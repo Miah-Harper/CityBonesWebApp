@@ -1,9 +1,9 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+@*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="~/css/site.css" />
-<link rel="stylesheet" type="text/css" href="maincss" />
+<link rel="stylesheet" type="text/css" href="maincss" />*@
 <div class="picture">
 
     @*<div style="display:inline-block;vertical-align:top;">*@
@@ -19,7 +19,7 @@
 
 
 
-<h5 class="text-center" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
+<h5 class="text-center h5flex" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
 
     My shop, City Bones,
     <br />
@@ -28,63 +28,23 @@
 </h5>
 <br />
 <br>
-@*<div class="contactMe">
-    <h2 style="font-size: medium">Contact Me</h2>
-
-    <div>
-
-        <a href="mailto:citybones3@gmail.com">
-            <img src="/images/cbemail.png"
-                 alt="email address"
-                 height="35"
-                 width="35">
-        </a>
-
-
-
-        <a href="https://www.facebook.com/profile.php?id=100022769647644">
-            <img src="/images/cbfb.png"
-                 alt="facebook"
-                 height="35"
-                 width="35">
-        </a>
-
-        <a href="https://www.instagram.com/city_bones/?hl=en">
-            <img src="/images/cbinsta.png"
-                 alt="instagram"
-                 height="35"
-                 width="35">
-        </a>
-
-    </div>
-</div>*@
 
 <style>
     body {
         background-image: url(images/cbhomepage.jpg);
         background-repeat: no-repeat;
         background-size: cover;
+        display: flex;
+        flex-direction: column;
     }
     img {
         border-radius: 50%;
+        display: flex;
     }
-    /*.contactMe {
-        /* scroll-margin-bottom: 20px;
-        position: center;
-        text-align: center;
-        bottom: 0px;
-        width: 100%;*/
-        /*position: fixed;
-        text-align: center;
-        bottom: 0px;
-        width: 100%;
-        padding-top: 10%;
-        position: center;
-        text-align: center;
-        bottom: 0px;
-        width: 100%;
-    }*/
 
+    .h5flex{
+        display: flex;
 
+    }
 
 </style>
