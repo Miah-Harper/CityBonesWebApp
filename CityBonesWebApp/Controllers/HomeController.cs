@@ -1,11 +1,8 @@
 ﻿using CityBonesWebApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+
 
 namespace CityBonesWebApp.Controllers
 {
@@ -71,6 +68,11 @@ namespace CityBonesWebApp.Controllers
         public IActionResult ContactMe()
         {
             return View();
+        }
+
+        public IActionResult AdminInventory()
+        {
+            return View("Index");
         }
     }
 }

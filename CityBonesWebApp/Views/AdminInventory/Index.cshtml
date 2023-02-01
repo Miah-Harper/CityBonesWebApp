@@ -1,7 +1,80 @@
 ﻿@model IEnumerable<Product>
-<h3> Product Information </h3>
 
-<table class="table">
+
+
+<h2>Products</h2>
+
+<div style="display: block">
+    <a href="/Admininventory/InsertProduct/">Create a New Product</a>
+</div>
+
+<table class="table"> 
+    <tr> 
+        <th>ID</th> 
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category ID</th>
+        <th>On Sale</th>
+        <th>Stock Level</th>
+    </tr>
+
+    @foreach (var product in Model) 
+    {
+        <tr>
+            <td><a href=/AdminInventory/ViewProduct/@product.ProductID>@product.ProductID</a></td>
+            <td>@product.Name</td> 
+            <td>@product.Price</td>
+            <td>@product.Category</td>
+            <td>@product.OnSale</td>
+            <td>@product.StockLevel</td>
+        </tr>
+    }
+
+</table>
+
+
+
+
+
+
+
+
+
+
+@*<h3> Products </h3>
+
+
+<div style="display: block">
+    <a href="/Product/InsertProduct/">Create a New Product</a>
+</div>
+
+<table class="table"> <!--this class attribute is going to help this connect to bootstrap and tell what the table needs to look like.  -->
+    <tr> <!--attribute to our row-->
+        <th>ID</th> <!--TH is table header. a row that doesn't change as we scroll through our table-->
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>On Sale</th>
+        <th>Stock Level</th>
+    </tr>
+
+    @foreach (var product in Model) // foreach product in model . what we are doing is feeding data from our model , into this view, when the view loads for the user.
+                                       //our model here for this particular view is an ienumerable of products
+    {
+        <tr>
+            <td><a href=/Product/ViewProduct/@product.ProductID>@product.ProductID</a></td>
+            <td>@product.Name</td> <!-- td is table data-->
+            <td>@product.Price</td>
+            <td>@product.CategoryID</td>
+            <td>@product.OnSale</td>
+            <td>@product.StockLevel</td>
+        </tr>
+    }
+
+</table>*@
+
+
+@*<table class="table">
     <tr>
         <th>Name</th>
         <th>ProductID</th>
@@ -30,4 +103,58 @@
     </tr>
      }
 
+      <tr> <!--attribute to our row-->
+        <th>ID</th> <!--TH is table header. a row that doesn't change as we scroll through our table-->
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category </th>
+        <th>On Sale</th>
+        <th>Stock Level</th>
+    </tr>
+
+    @foreach (var product in Model) // foreach product in model . what we are doing is feeding data from our model , into this view, when the view loads for the user.
+                                       //our model here for this particular view is an ienumerable of products
+    {
+        <tr>
+            <td><a href=/Product/ViewProduct/@product.ProductID>@product.ProductID</a></td>
+            <td>@product.Name</td> <!-- td is table data-->
+            <td>@product.Price</td>
+            <td>@product.Category</td>
+            <td>@product.OnSale</td>
+            <td>@product.StockLevel</td>
+        </tr>
+    }
+
+
+
+</table>*@
+@*
+<div style="display: block">
+    <a href="/Product/InsertProduct/">Create a New Product</a>
+</div>
+
+<table class="table"> <!--this class attribute is going to help this connect to bootstrap and tell what the table needs to look like.  -->
+    <tr> <!--attribute to our row-->
+        <th>ID</th> <!--TH is table header. a row that doesn't change as we scroll through our table-->
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category </th>
+        <th>On Sale</th>
+        <th>Stock Level</th>
+    </tr>
+
+    @foreach (var product in Model) // foreach product in model . what we are doing is feeding data from our model , into this view, when the view loads for the user.
+                                       //our model here for this particular view is an ienumerable of products
+    {
+        <tr>
+            <td><a href=/Product/ViewProduct/@product.ProductID>@product.ProductID</a></td>
+            <td>@product.Name</td> <!-- td is table data-->
+            <td>@product.Price</td>
+            <td>@product.Category</td>
+            <td>@product.OnSale</td>
+            <td>@product.StockLevel</td>
+        </tr>
+    }
+
 </table>
+*@

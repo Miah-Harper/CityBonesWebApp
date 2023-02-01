@@ -1,87 +1,74 @@
-﻿using Dapper;
+﻿using CityBonesWebApp.Models;
+using Dapper;
 using System.Collections.Generic;
 using System.Data;
 
 namespace CityBonesWebApp.Models.Checkout
 {
-    
-        public class ProductRepo : IProductRepo
+    public class ProductRepo : IProductRepo //our productrepo depends on a connection to our database and that what we're injecting into this 
+    {
+        private readonly IDbConnection _conn; //field. this is stored in the start up 
+
+
+        public ProductRepo(IDbConnection conn) //this conn file gets passed into type IDbconnection, which we then pass into our field ^^ and that gives us our dependency injection. We're injecting this (Idbconn) into our field 
         {
-            private readonly ICategoryRepo _categoryRepo = new CategoryRepo();
-            private readonly IDbConnection _conn;
-
-            public ProductRepo(IDbConnection conn)
-            {
-                _conn = conn;
-            }
-
-            public IEnumerable<Product> Product
-            {
-                get
-
-                {
-                    return new List<Product>
-                    { 
-                
-                    new Product
-                    {
-                        Name ="Floral Bobcat Skull",
-                        Price = 120,
-                        ShortDescription = "Absolutely beautiful full Bobcat skull!",
-                        LongDescription = "This is a hanging full Bobcat skull with hand painted upper gold teeth! It is missing it's bottom teeth.",
-                       ImageUrl = "https://tinypic.host/images/2022/07/15/IMG_7716.jpg",
-                       InStock = true,
-                       ImageThumbnailUrl = "https://tinypic.host/images/2022/07/15/IMG_7716.th.jpg"
-
-                    },
-
-                    new Product
-                    {
-                         Name ="Raccoon Angel",
-                        Price = 175,
-                        ShortDescription = "Raccoon Angel with crystallized canines!",
-                        LongDescription = "This is a hanging Raccoon skull with missing teeth, however, I added crystals to this skulls canines!",
-                       ImageUrl = "https://tinypic.host/images/2022/07/21/IMG_7706.jpg",
-                       InStock = true,
-                       ImageThumbnailUrl = "https://tinypic.host/images/2022/07/21/IMG_7706.th.jpg"
-
-                    },
-
-                    new Product
-                    {
-                        Name = "Macrame Pig Skull",
-                        Price = 195,
-                        ShortDescription = "Stunning macrame pig skull",
-                        LongDescription = "This is a magical pig skull that took me 1 1/2 years to clean! The moss and flowers are dried and preserved so they will stay this color! I created hte crystals myself, made the macrame, and added the cutest pastel mushrooms! ",
-                        ImageUrl = "https://tinypic.host/images/2022/07/21/IMG_7697.jpg",
-                        InStock = true,
-                        ImageThumbnailUrl = "https://tinypic.host/images/2022/07/21/IMG_7697.th.jpg"
-
-                    }
-                };
-
-
-
-
-
-            }
+            _conn = conn;
         }
 
-             public IEnumerable<Product> Products { get; }
-
-             public ICategoryRepo CategoryRepo => _categoryRepo;
-
-             IEnumerable<Product> IProductRepo.Product { get; set; }
-
-
-            public IEnumerable<Product> GetAllProducts()
-            {
-                return _conn.Query<Product>("SELECT * FROM products");
-            }
-            /*public IEnumerable<Product> GetAllPictures()
-            {
-                return _conn.Query<Product>("SELECT * from pictures");
-            }*/
+        public IEnumerable<Product> GetAllProducts()
+        {
+            return _conn.Query<Product>("SELECT * FROM PRODUCTS;");
         }
+
+        IEnumerable<Product> IProductRepo.GetAllProducts()
+        {
+            return _conn.Query<Product>("SELECT * FROM products;");
+        }
+
+        public Product GetProduct(int id)
+        {
+            return _conn.QuerySingle<Product>("SELECT * FROM PRODUCTS WHERE PRODUCTID = @id", new { id = id });
+        }
+
+        public void UpdateProduct(Product product)
+        {
+            _conn.Execute("UPDATE products SET Name = @name, Price = @price WHERE ProductID = @id",
+             new { name = product.Name, price = product.Price, id = product.ProductID });
+        }
+
+        public void InsertProduct(Product productToInsert)
+        {
+            _conn.Execute("INSERT INTO products (NAME, PRICE, CATEGORY) VALUES (@name, @price, @category);",
+                new { name = productToInsert.Name, price = productToInsert.Price, category = productToInsert.Category });
+        }
+
+        //public IEnumerable<Product> ViewProduct()
+        //{
+        //    return _conn.Query<Product>("SELECT * FROM products");
+        //}
+        public IEnumerable<Category> GetCategories()
+        {
+            return _conn.Query<Category>("SELECT * FROM category;");
+        }
+
+        public Product AssignCategory()
+        {
+            var categoryList = GetCategories();
+            var product = new Product();
+            product.Categories = categoryList;
+
+            return product;
+        }
+
+        public void DeleteProduct(Product product)
+        {
+            _conn.Execute("DELETE FROM REVIEWS WHERE ProductID = @id;", new { id = product.ProductID });
+            _conn.Execute("DELETE FROM Sales WHERE ProductID = @id;", new { id = product.ProductID });
+            _conn.Execute("DELETE FROM Products WHERE ProductID = @id;", new { id = product.ProductID });
+        }
+
+
+    }
+
 }
 

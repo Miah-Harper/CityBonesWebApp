@@ -1,21 +1,21 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="~/css/site.css" />
-<link rel="stylesheet" type="text/css" href="maincss" />*@
-<div class="picture">
+<link rel="stylesheet" type="text/css" href="maincss" />
+@*<div class="picture">*@
 
     @*<div style="display:inline-block;vertical-align:top;">*@
-        @*<p>*@<image class='picture'>
-            <p style="text-align:center" ;>
+        @*<p>*@@*<image class='picture'>
+            <p style="text-align:center" ;>*@
                 <img src="/images/cityboneslogo.jpeg"
                 alt="city bones logo" 
                 width="300" 
                 height="300" />
         @** </div>*@
     @*<div style="display:inline-block;"></div>*@
-</div>
+@*</div>*@
 
 
 
@@ -39,12 +39,23 @@
     }
     img {
         border-radius: 50%;
-        display: flex;
+       /* display: flex;
+        justify-content: center;*/
+        display: block;
+        margin-left: auto;
+        margin-right: auto
+       
     }
 
     .h5flex{
         display: flex;
+        justify-content: center;
 
     }
+
+    /*.picutre{
+        display: flex;
+        justify-content: center;
+    }*/
 
 </style>

@@ -37,7 +37,7 @@ namespace CityBonesWebApp.Models
 
         public IEnumerable<Category> GetCategories()
         {
-            return _conn.Query<Category>("SELECT * FROM categories;");
+            return _conn.Query<Category>("SELECT * FROM category;");
         }
 
         public Product GetProduct(int id)

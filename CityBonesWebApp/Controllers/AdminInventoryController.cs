@@ -5,30 +5,30 @@ namespace CityBonesWebApp.Controllers
 {
     public class AdminInventoryController : Controller
     {
-        private IAdminInventoryRepo repo;
+        private readonly IAdminInventoryRepo _repo;
 
         public AdminInventoryController(IAdminInventoryRepo repo)
         {
-            this.repo = repo;
+            this._repo = repo;
         }
 
 
         public IActionResult Index()
         {
-            var products = repo.GetAllProducts();
+            var products = _repo.GetAllProducts();
 
             return View(products);
         }
 
         public IActionResult ViewProduct(int id)
         {
-            var product = repo.GetProduct(id);
+            var product = _repo.GetProduct(id);
             return View(product);
         }
 
         public IActionResult UpdateProduct(int id)
         {
-            Product prod = repo.GetProduct(id);
+            Product prod = _repo.GetProduct(id);
             if (prod == null)
             {
                 return View("ProductNotFound");
@@ -38,26 +38,26 @@ namespace CityBonesWebApp.Controllers
 
         public IActionResult UpdateProductToDatabase(Product product)
         {
-            repo.UpdateProduct(product);
+            _repo.UpdateProduct(product);
 
             return RedirectToAction("ViewProduct", new { id = product.ProductID });
         }
 
         public IActionResult InsertProduct()
         {
-            var prod = repo.AssignCategory();
+            var prod = _repo.AssignCategory();
             return View(prod);
         }
 
         public IActionResult InsertProductToDatabase(Product productToInsert)
         {
-            repo.InsertProduct(productToInsert);
+            _repo.InsertProduct(productToInsert);
             return RedirectToAction("Index");
         }
 
         public IActionResult DeleteProduct(Product product)
         {
-            repo.DeleteProduct(product);
+            _repo.DeleteProduct(product);
             return RedirectToAction("Index");
         }
     }
